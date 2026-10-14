@@ -4,6 +4,8 @@ import json
 from dataclasses import asdict
 from pathlib import Path
 
+import pandas as pd
+
 from .model import Config, evaluate
 
 
@@ -49,9 +51,9 @@ def main():
     (args.output / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     html = '<!doctype html><meta charset="utf-8"><title>Inventory Rewired</title><style>body{font:16px system-ui;max-width:1100px;margin:40px auto;padding:20px}table{border-collapse:collapse;width:100%}td,th{padding:8px;border-bottom:1px solid #ddd;text-align:right}h1,h2{color:#163d56}</style>'
     html += "<h1>Inventory Rewired</h1><p>Static versus adaptive replenishment. Both policies use the same demand, opening inventory and cost assumptions. No forecast observes future demand.</p>"
-    html += "<h2>Portfolio totals</h2>" + __import__("pandas").DataFrame(
-        totals
-    ).to_html(index=False, float_format=lambda x: f"{x:.3f}")
+    html += "<h2>Portfolio totals</h2>" + pd.DataFrame(totals).to_html(
+        index=False, float_format=lambda x: f"{x:.3f}"
+    )
     html += "<h2>Store–SKU comparisons</h2>" + kpis.to_html(
         index=False, float_format=lambda x: f"{x:.3f}"
     )
