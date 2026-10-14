@@ -1,0 +1,38 @@
+{
+  "start": "2024-03-20",
+  "config": {
+    "days": 21,
+    "training_days": 56,
+    "minimum_history": 14,
+    "review_days": 7,
+    "holding_rate_daily": 0.0005,
+    "order_cost": 20.0
+  },
+  "policies": [
+    {
+      "policy": "adaptive",
+      "fill_rate": 0.9798342541436464,
+      "lost_units": 73.0,
+      "waste_units": 0.0,
+      "holding_cost": 2084.8058799999994,
+      "ordering_cost": 860.0,
+      "waste_cost": 0.0,
+      "lost_sales_at_cost": 7286.8
+    },
+    {
+      "policy": "static",
+      "fill_rate": 0.9798342541436464,
+      "lost_units": 73.0,
+      "waste_units": 0.0,
+      "holding_cost": 2221.27719,
+      "ordering_cost": 680.0,
+      "waste_cost": 0.0,
+      "lost_sales_at_cost": 7286.8
+    }
+  ],
+  "inputs": {
+    "SKU-Store Sales.xlsx": "87972c6826cde5a1fc1614cd79f4837ede0abdd2964af0f1bb302e312fea47a8",
+    "Given Data.xlsx": "7140cb67c7e1938e6161dfe5e25f1bf36bad5845e265c30ef75dae50851ec0be"
+  },
+  "scope": "Case-data replay; cost assumptions are configurable engineering assumptions."
+}
